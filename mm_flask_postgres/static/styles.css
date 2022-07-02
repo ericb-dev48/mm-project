@@ -1,0 +1,31 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+.jumbotron {
+    background-image: url("https://imagedelivery.net/7urfTiC8XtiqnXYk5tfRRg/639fd6eb-f64e-48df-6a4e-bb5a5349ca00/public");
+    background-size: cover;
+    height: 200vh;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+}
+
+/* .navbar a {
+    color: white
+}
+
+.navbar a:hover {
+    color: orange;
+} */
+
+/* Move static files you need to project_root/static/. Let's assume that you moved stylesheets/style.css into project_root/static/stylesheets/style.css.
+
+Change
+
+<link ... href="/stylesheets/style.css" />
+to
+
+<link ... href="{{ url_for('static', filename='stylesheets/style.css') }}" />

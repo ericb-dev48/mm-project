@@ -1,0 +1,29 @@
+{%- extends "base.html" -%}
+
+{% block title%}About Us{% endblock %}
+
+{% block content %}
+
+<!-- List of teachers on staff -->
+<div class="container">
+
+    <h1 class = "text-primary">Our Teachers</h1>
+    
+    {% for record in staffRecords %}
+    <div class="m-5">
+        <div class="staff-member">
+            <h2 class="text-dark">{{record['full_name']}}</h2>
+            <h3 class="text-secondary">{{record['position_string']}}</h3>
+            <img src="{{record['img_url']}}" alt="{{record['full_name']}}">
+            <p>{{record['bio']}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+{{%  %}}
+

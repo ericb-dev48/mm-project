@@ -1,0 +1,89 @@
+{% macro nav_item(href, itemName, otherClasses="") %}
+<li class="nav-item">
+    <a class="nav-link {{otherClasses}}" href="{{href}}">{{itemName}}</a>
+</li>
+{% endmacro %}
+
+{% macro nav_social(backgroundColor, href, class) %}
+<a class="btn btn-primary" style="background-color: {{backgroundColor}};" href="{{href}}" role="button" target="_blank"><i class="{{class}}"></i></a>
+{% endmacro %}
+
+{% macro nav_socials() %}
+<ul class="align-middle">
+
+  <!-- Facebook macro -->
+  {{nav_social("#3b5998", "https://www.facebook.com/musicalmunchkinsny/", "bi bi-facebook")}}
+
+  <!-- Twitter macro -->
+  {{nav_social("#55acee", "https://www.yelp.com/biz/musical-munchkins-white-plains", "bi bi-twitter")}}
+
+  <!-- Instagram macro -->
+  {{nav_social("#ac2bac", "https://www.instagram.com/musical_munchkins/?hl=en", "bi bi-instagram")}}
+
+  <!-- Youtube macro -->
+  {{nav_social("#ed302f", "https://www.youtube.com/channel/UCuyxfn0vuK8zLCQe4YWgIzg", "bi bi-youtube")}}
+
+</ul>
+{% endmacro%}
+
+{% macro navbar() %}
+<nav class="navbar navbar-expand-lg bg-light">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/">Musical Munchkins</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            {{ nav_item("/", "Home") }}
+
+            {{ nav_item("/about", "About") }}
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Classes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/our-classes">Our Classes</a></li>
+                <li><a class="dropdown-item" href="/locations">Locations</a></li>
+                <li><a class="dropdown-item" href="/schedule">Schedule</a></li>
+                <li><a class="dropdown-item" href="/register">Register</a></li>
+                <li><a class="dropdown-item" href="/covid-protocols">Covid-19 Protocols</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Other Programs
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Parties</a></li>
+                <li><a class="dropdown-item" href="#">Partner With Us</a></li>
+                <li><a class="dropdown-item" href="#">Teacher Training</a></li>
+              </ul>
+            </li>
+
+            {{ nav_item("/contact", "Contact") }}
+
+            {{ nav_item("/store", "Store") }}
+
+          </ul>
+
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+
+          {{ nav_socials() }}
+
+        </div>
+
+      </div>
+
+</nav>
+{% endmacro %}
